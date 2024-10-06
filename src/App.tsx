@@ -1,9 +1,23 @@
+import React, { useState } from 'react';
+import Modal from './components/UI/Modal/Modal';
 
-const App = () => (
-    <>
+const App: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
 
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
 
-    </>
-);
+  return (
+    <div className="container mt-5">
+      <button className="btn btn-primary" onClick={openModal}>
+        Open Modal
+      </button>
 
-export default App
+      <Modal show={showModal} onClose={closeModal} title="Modal title">
+        <p>This is modal content.</p>
+      </Modal>
+    </div>
+  );
+};
+
+export default App;
