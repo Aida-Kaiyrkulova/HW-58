@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Props {
   show: boolean;
@@ -14,35 +14,35 @@ const Modal: React.FC<Props> = ({ show, onClose, title, children }) => {
 
   return (
     <>
-    <div
-      className="modal-backdrop show"
-      style={{display: 'block'}}
-    />
-  <div className="modal fade show" style={{display: 'block'}}>
-    <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header d-sm-flex justify-content-between">
-            <h5 className="modal-title">{title}</h5>
-            <button
-              type="button"
-              className="close border-0 bg-white"
-              onClick={onClose}
-              aria-label="Close"
-            ><span aria-hidden="true">x</span>
-            </button>
-          </div>
-          <div className="modal-body">
-            {children}
-          </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" onClick={onClose}>
-              Закрыть
-            </button>
+      <div className="modal-backdrop show" style={{ display: "block" }} />
+      <div className="modal fade show" style={{ display: "block" }}>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header d-sm-flex justify-content-between">
+              <h5 className="modal-title">{title}</h5>
+              <button
+                type="button"
+                className="close border-0 bg-white"
+                onClick={onClose}
+                aria-label="Close"
+              >
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div className="modal-body">{children}</div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={onClose}
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </>
+    </>
   );
 };
 
